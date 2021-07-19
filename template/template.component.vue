@@ -1,12 +1,11 @@
 <template>
-  <div class="componentName">
+  <div class="componentName0">
   </div>
 </template>
 <script lang="ts">
-import componentNameComponent from './componentName.component.ts'
-
-export default componentNameComponent
+import componentName1Component from './componentName0.component'
+export default componentName1Component
 </script>
 <style lang="less">
-@import "./componentName.component.less";
+@import "./componentName0.component.less"
 </style>

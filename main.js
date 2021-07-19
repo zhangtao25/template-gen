@@ -3,6 +3,15 @@
  * @componentName {String} 组件名
  */
 
+// 横线转大驼峰
+function getCamelCase( str ) {
+  let sss = str.replace( /-([a-z])/g, function( all, i ){
+    return i.toUpperCase();
+  } )
+  return sss.charAt(0).toUpperCase() + sss.slice(1)
+}
+
+
 const fs = require('fs');
 const path = require('path');
 
@@ -19,7 +28,11 @@ const arr = ['vue','less','ts']
 for (let i = 0; i < arr.length; i++) {
     // 读取模板文件，并修改内容
     let template = fs.readFileSync(path.join(__dirname, './template/template.component.' + arr[i]), 'utf8');
-    let content = template.replace(/componentName/g, componentName); // target file content
+    let content = template.
+    replace(/componentName0/g, componentName).
+    replace(/componentName1/g, getCamelCase(componentName)); // target file content
+
+  console.log(componentName,'componentName')
 
 // 目标文件夹和目标文件的路径
     let targetDirPath = path.join(__dirname, root, componentName);
