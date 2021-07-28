@@ -1,18 +1,47 @@
-import {ref,onMounted} from "vue";
+import {ref,onMounted,watch,toRefs,computed} from "vue";
 
 export default {
-  setup() {
-    // ***函数方法
-    // 初始化函数
+  components:{
+  },
+  props:{
+  },
+  setup(props) {
+    // 解构props
+    const {} = toRefs(props)
+
+    // ref数据
+    const msg = ref<string>('')
+
+    // 不需要返回的方法
     const init = () => {
     }
 
-    //*** 钩子函数
+    // 需要返回的方法
+    const test = () =>{}
+
+    // 计算数据
+    const testComputed = computed(()=>{
+      return 123
+    })
+
+    // 生命周期
     onMounted(()=>{
       init()
     })
 
-    //*** return
-    return {}
+    // 监听
+    watch(msg,()=>{
+
+    })
+
+    // 返回
+    return {
+      // ref数据
+      msg,
+      // 计算数据
+      testComputed,
+      // 方法
+      test
+    }
   },
 };
