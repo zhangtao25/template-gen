@@ -1,5 +1,6 @@
 <template>
   <div class="componentName0">
+  {{msg}}
   </div>
 </template>
 <script lang="ts">
